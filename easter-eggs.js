@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 dust.remove();
             }, 1000);
         }
+    }
     // --- YENİ EASTER EGGS ---
 
     // 4. Matematik 2 Vize Sınavı Kağıdı
@@ -129,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const audioGuideBtn = document.getElementById('audio-guide-btn');
     if (audioGuideBtn) {
         audioGuideBtn.addEventListener('click', () => {
-            showVintageAlert("🎧 Sesli Rehber: 'Sol tarafınızda gördüğünüz bu yorgun figür, Topkapı Sarayı'nda tarihi eserleri incelerken yorgunluktan bitap düşmüş Asu'yu tasvir etmektedir. Lütfen esere flaş patlatmayınız.'");
+            showVintageAlert("Sesli Rehber: 'Sol tarafınızda gördüğünüz bu yorgun figür, Topkapı Sarayı'nda tarihi eserleri incelerken yorgunluktan bitap düşmüş Asu'yu tasvir etmektedir. Lütfen esere flaş patlatmayınız.'");
         });
     }
 
