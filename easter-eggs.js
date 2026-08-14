@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const paper = document.createElement('div');
         paper.className = 'vintage-paper';
         paper.innerHTML = `
-            <span class="close-modal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem; font-family: sans-serif; color: #888;">&times;</span>
+            <span class="close-modal">&times;</span>
             <h3 style="text-align: center; border-bottom: 2px dashed #5a5a5a; padding-bottom: 1rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Mühim Bir İkaz</h3>
             <div class="dialogue"><p style="font-size: 1.1rem; line-height: 1.5; text-align: center;">${message}</p></div>
         `;
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const paper = document.createElement('div');
             paper.className = 'math-exam';
             paper.innerHTML = `
-                <span class="close-modal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem; font-family: sans-serif; color: #888; z-index: 10;">&times;</span>
+                <span class="close-modal">&times;</span>
                 <h4>T.C. Üniversite - Matematik 2 Vize Sınavı</h4>
                 <div class="grade">40</div>
                 <div class="questions">
