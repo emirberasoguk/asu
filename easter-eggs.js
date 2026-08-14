@@ -90,5 +90,90 @@ document.addEventListener('DOMContentLoaded', () => {
                 dust.remove();
             }, 1000);
         }
+    // --- YENİ EASTER EGGS ---
+
+    // 4. Matematik 2 Vize Sınavı Kağıdı
+    const mathTrigger = document.getElementById('math-exam-trigger');
+    if (mathTrigger) {
+        mathTrigger.addEventListener('click', () => {
+            const overlay = document.createElement('div');
+            overlay.className = 'telegram-modal active';
+            overlay.style.zIndex = '1000';
+            
+            const paper = document.createElement('div');
+            paper.className = 'math-exam';
+            paper.innerHTML = `
+                <span class="close-modal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem; font-family: sans-serif; color: #888; z-index: 10;">&times;</span>
+                <h4>T.C. Üniversite - Matematik 2 Vize Sınavı</h4>
+                <div class="grade">40</div>
+                <div class="questions">
+                    <p><strong>Soru 1:</strong> lim(x→0) (sin x)/x = ? <br><em>Cevap: 1 (Lütfen hocam)</em></p>
+                    <p><strong>Soru 2:</strong> ∫ e^x dx = ? <br><em>Cevap: e^x + C (C'yi unutmadım)</em></p>
+                    <p><strong>Soru 3-5:</strong> [Buralar karalanmış, okunamıyor...]</p>
+                </div>
+                <div class="note">
+                    <p><strong>Öğrenci Notu:</strong> Hocam n'olur geçirin, inanın 5 saattir buraya bakıyorum hiçbir şey anlamadım. Mezuniyetim size bağlı, canım hocam...</p>
+                    <p style="color:#d32f2f; margin-top: 10px;"><strong>Hoca:</strong> Sınıftakiler daha kötü yaptığı için geçtin. Tebrikler.</p>
+                </div>
+            `;
+            
+            overlay.appendChild(paper);
+            document.body.appendChild(overlay);
+            
+            paper.querySelector('.close-modal').addEventListener('click', () => overlay.remove());
+            overlay.addEventListener('click', (e) => { if (e.target === overlay) overlay.remove(); });
+        });
+    }
+
+    // 5. Müze Sesli Rehberi
+    const audioGuideBtn = document.getElementById('audio-guide-btn');
+    if (audioGuideBtn) {
+        audioGuideBtn.addEventListener('click', () => {
+            showVintageAlert("🎧 Sesli Rehber: 'Sol tarafınızda gördüğünüz bu yorgun figür, Topkapı Sarayı'nda tarihi eserleri incelerken yorgunluktan bitap düşmüş Asu'yu tasvir etmektedir. Lütfen esere flaş patlatmayınız.'");
+        });
+    }
+
+    // 6. Çay Lekesi
+    const teaTrigger = document.getElementById('tea-trigger');
+    if (teaTrigger) {
+        let teaTimer;
+        teaTrigger.addEventListener('mouseenter', (e) => {
+            teaTimer = setTimeout(() => {
+                const stain = document.createElement('div');
+                stain.className = 'tea-stain';
+                stain.style.left = e.pageX + 'px';
+                stain.style.top = e.pageY + 'px';
+                document.body.appendChild(stain);
+                
+                const tooltip = document.createElement('div');
+                tooltip.className = 'tea-tooltip';
+                tooltip.innerText = "Eyvah, çay döküldü... Neyse ki deniz yoluyla gelmişti.";
+                tooltip.style.left = e.pageX + 'px';
+                tooltip.style.top = (e.pageY - 20) + 'px';
+                document.body.appendChild(tooltip);
+                
+                setTimeout(() => { stain.remove(); tooltip.remove(); }, 3000);
+            }, 500); // 0.5s hover
+        });
+        teaTrigger.addEventListener('mouseleave', () => {
+            clearTimeout(teaTimer);
+        });
+    }
+
+    // 7. Karadeniz Yağmuru
+    const rainTrigger = document.getElementById('rain-trigger');
+    if (rainTrigger) {
+        rainTrigger.addEventListener('click', () => {
+            for(let i=0; i<30; i++) {
+                setTimeout(() => {
+                    const drop = document.createElement('div');
+                    drop.className = 'rain-drop';
+                    drop.style.left = Math.random() * window.innerWidth + 'px';
+                    drop.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's';
+                    document.body.appendChild(drop);
+                    setTimeout(() => drop.remove(), 1000);
+                }, i * 100);
+            }
+        });
     }
 });

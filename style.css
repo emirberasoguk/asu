@@ -425,3 +425,121 @@ footer .links {
   z-index: 1000;
   transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1), opacity 1s ease-out;
 }
+
+/* --- New Easter Eggs --- */
+
+/* Math Exam */
+.exam-trigger {
+    position: fixed;
+    bottom: -15px;
+    right: 50px;
+    width: 40px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transform: rotate(-10deg);
+    cursor: pointer;
+    z-index: 100;
+    transition: all 0.3s;
+}
+.exam-trigger:hover {
+    bottom: 0;
+    transform: rotate(0deg);
+}
+.math-exam {
+    font-family: 'Courier New', Courier, monospace;
+    background: #fff;
+    background-image: linear-gradient(#f0f0f0 1px, transparent 1px);
+    background-size: 100% 1.5rem;
+    padding: 3rem;
+    border-radius: 2px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.math-exam h4 { text-align: center; font-family: var(--font-sans); margin-bottom: 20px; font-size: 1.2rem;}
+.math-exam .questions { color: #555; line-height: 2; margin: 1rem 0; font-family: monospace; }
+.math-exam .note { color: #225588; font-style: italic; margin-top: 2rem; border-top: 1px dashed #ccc; padding-top: 10px; }
+.math-exam .grade {
+    color: #d32f2f;
+    font-size: 3rem;
+    font-weight: bold;
+    border: 3px solid #d32f2f;
+    border-radius: 50%;
+    width: 80px; height: 80px;
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; top: 10px; right: 10px;
+    transform: rotate(15deg);
+    font-family: var(--font-sans);
+}
+
+/* Audio Guide */
+.audio-guide-wrapper { position: relative; display: inline-block; }
+.audio-guide-btn {
+    position: absolute;
+    bottom: 10px; left: 10px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    border-radius: 50%;
+    width: 35px; height: 35px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.audio-guide-btn:hover { background: var(--accent-color); transform: scale(1.1); }
+
+/* Tea Spill */
+.tea-spill-trigger {
+    border-bottom: 2px dotted #a87b51;
+    cursor: pointer;
+    position: relative;
+    color: #8c6036;
+    font-weight: 600;
+}
+.tea-stain {
+    position: absolute;
+    background: radial-gradient(circle, rgba(139,69,19,0.3) 0%, rgba(139,69,19,0) 70%);
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    animation: bloom 1.5s forwards;
+}
+@keyframes bloom {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+}
+.tea-tooltip {
+    position: absolute;
+    background: #fff; color: #333;
+    padding: 5px 10px; border-radius: 4px;
+    font-size: 12px; font-family: var(--font-sans);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    pointer-events: none;
+    z-index: 51;
+}
+
+/* Rain Effect */
+.rain-trigger {
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.3s;
+    margin-left: 10px;
+}
+.rain-trigger:hover { transform: scale(1.1); }
+.rain-drop {
+    position: fixed;
+    width: 2px; height: 15px;
+    background: rgba(100, 150, 200, 0.4);
+    top: -20px;
+    z-index: 9999;
+    pointer-events: none;
+    animation: fall linear forwards;
+}
+@keyframes fall {
+    to { transform: translateY(110vh); }
+}
