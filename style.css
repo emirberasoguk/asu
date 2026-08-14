@@ -267,6 +267,8 @@ footer .links {
   color: #2b2b2b;
   transform: rotate(-1deg);
   border: 1px solid #c2b48d;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 .vintage-paper h3 {
   text-align: center;
@@ -458,6 +460,8 @@ footer .links {
     max-width: 500px;
     position: relative;
     box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    max-height: 90vh;
+    overflow-y: auto;
 }
 .math-exam h4 { text-align: center; font-family: var(--font-sans); margin-bottom: 20px; font-size: 1.2rem;}
 .math-exam .questions { color: #555; line-height: 2; margin: 1rem 0; font-family: monospace; }
