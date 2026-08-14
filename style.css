@@ -523,23 +523,4 @@ footer .links {
     z-index: 51;
 }
 
-/* Rain Effect */
-.rain-trigger {
-    cursor: pointer;
-    display: inline-block;
-    transition: 0.3s;
-    margin-left: 10px;
-}
-.rain-trigger:hover { transform: scale(1.1); }
-.rain-drop {
-    position: fixed;
-    width: 2px; height: 15px;
-    background: rgba(100, 150, 200, 0.4);
-    top: -20px;
-    z-index: 9999;
-    pointer-events: none;
-    animation: fall linear forwards;
-}
-@keyframes fall {
-    to { transform: translateY(110vh); }
-}
+/* Rain Effect removed */

@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const okeyTile = document.querySelector('.okey-tile');
     if (okeyTile) {
         okeyTile.addEventListener('click', () => {
-            showVintageAlert("Uyarı: 101 Okey oynarken perleri çalanlara ve dost kazığı atanlara tarih asla affetmez!");
+            showVintageAlert("İkaz: 101 Okey oynarken taşları çalanları ve dost kazığı atanları tarih asla affetmez!");
             okeyTile.style.transform = "rotate(360deg) scale(0)";
             setTimeout(() => { okeyTile.style.display = 'none'; }, 500);
         });
@@ -158,23 +158,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         teaTrigger.addEventListener('mouseleave', () => {
             clearTimeout(teaTimer);
-        });
-    }
-
-    // 7. Karadeniz Yağmuru
-    const rainTrigger = document.getElementById('rain-trigger');
-    if (rainTrigger) {
-        rainTrigger.addEventListener('click', () => {
-            for(let i=0; i<30; i++) {
-                setTimeout(() => {
-                    const drop = document.createElement('div');
-                    drop.className = 'rain-drop';
-                    drop.style.left = Math.random() * window.innerWidth + 'px';
-                    drop.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's';
-                    document.body.appendChild(drop);
-                    setTimeout(() => drop.remove(), 1000);
-                }, i * 100);
-            }
         });
     }
 });
