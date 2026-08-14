@@ -135,6 +135,7 @@ nav a:hover, nav a.active {
 /* Content Blocks */
 .content-block {
   margin-bottom: 4rem;
+  position: relative;
 }
 
 .content-block h2 {
@@ -298,7 +299,7 @@ footer .links {
 /* Playing Card (Blöf/Dost Kazığı) */
 .playing-card-container {
   position: absolute;
-  top: -20px;
+  bottom: 0px;
   right: 5%;
   width: 60px;
   height: 85px;
@@ -371,7 +372,7 @@ footer .links {
   font-size: 1rem;
 }
 .okey-tile::after {
-  content: "⭐";
+  content: "★";
   position: absolute;
   top: -12px;
   left: 6px;

@@ -35,9 +35,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const okeyTile = document.querySelector('.okey-tile');
     if (okeyTile) {
         okeyTile.addEventListener('click', () => {
-            alert("Uyarı: 101 Okey oynarken perleri çalanlara ve dost kazığı atanlara tarih asla affetmez! 🀄");
+            showVintageAlert("Uyarı: 101 Okey oynarken perleri çalanlara ve dost kazığı atanlara tarih asla affetmez!");
             okeyTile.style.transform = "rotate(360deg) scale(0)";
             setTimeout(() => { okeyTile.style.display = 'none'; }, 500);
+        });
+    }
+
+    function showVintageAlert(message) {
+        const overlay = document.createElement('div');
+        overlay.className = 'telegram-modal active';
+        overlay.style.zIndex = '1000';
+        
+        const paper = document.createElement('div');
+        paper.className = 'vintage-paper';
+        paper.innerHTML = `
+            <span class="close-modal" style="position: absolute; top: 10px; right: 15px; cursor: pointer; font-size: 1.5rem; font-family: sans-serif; color: #888;">&times;</span>
+            <h3 style="text-align: center; border-bottom: 2px dashed #5a5a5a; padding-bottom: 1rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 2px;">Mühim Bir İkaz</h3>
+            <div class="dialogue"><p style="font-size: 1.1rem; line-height: 1.5; text-align: center;">${message}</p></div>
+        `;
+        
+        overlay.appendChild(paper);
+        document.body.appendChild(overlay);
+        
+        paper.querySelector('.close-modal').addEventListener('click', () => {
+            overlay.remove();
+        });
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) overlay.remove();
         });
     }
 
